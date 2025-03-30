@@ -79,6 +79,48 @@ This system uses a fine-tuned YOLOv8 (You Only Look Once) object detection model
 | Platelets   | 0.41      | 0.70   | 0.47  | 0.28     |
 | **Overall** | 0.50      | 0.87   | 0.60  | 0.43     |
 
+## Additional Notes
+
+1. **Dataset Preparation**: 
+   - Primary dataset: [BCCD Dataset](https://github.com/Shenggan/BCCD_Dataset)
+   - Alternative: [Kaggle Blood Cells](https://www.kaggle.com/datasets/paultimothymooney/blood-cells)
+   - Preprocessing script: `python scripts/data_preprocessing.py`
+
+2. **Deployment Options**:
+   - Temporary: ngrok (`python app/main.py` with ngrok tunnel)
+   - Permanent:
+     1. Heroku (recommended for beginners)
+     2. AWS EC2 (for GPU acceleration)
+     3. Docker containerization
+
+3. **Environment Variables**: Create `.env` file with:
+           MODEL_PATH=models/best.pt
+           CONFIDENCE_THRESHOLD=0.25
+
+4. **Testing**: 
+- Test cases available in `/tests`
+- Run with: `python -m pytest tests/`
+
+## 🤝 Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+**Contribution Guidelines**:
+- Document new functions with docstrings
+- Include unit tests for new features
+- Maintain consistent code style (PEP 8)
+
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📬 Contact
+Email - abhishek261kumar@gmail.com  
+Project Link: [https://github.com/Abhishek0-7/Blood-Cell-Detection](https://github.com/Abhishek0-7/Blood-Cell-Detection)
+
 ## 🚀 Quick Start
 
 ### Installation
