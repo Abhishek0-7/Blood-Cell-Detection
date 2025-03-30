@@ -28,10 +28,12 @@ We use the **BCCD (Blood Cell Count Dataset)** available from:
 
 ### Preprocessing Steps
 1. **Conversion**: XML → YOLO format
+
 2. **Splitting**:
    - 70% Training (255 images)
    - 15% Validation (55 images)
    - 15% Testing (54 images)
+  
 3. **Augmentation**:
    - Horizontal flips
    - Random rotations
@@ -43,6 +45,7 @@ We use the **BCCD (Blood Cell Count Dataset)** available from:
 This system uses a fine-tuned YOLOv8 (You Only Look Once) object detection model trained on 500+ annotated blood cell images. The pipeline:
 
 1. **Input**: Microscopic blood cell image (JPEG/PNG)
+
 2. **Processing**:
    - Image normalization
    - YOLOv8 inference
@@ -93,9 +96,21 @@ This system uses a fine-tuned YOLOv8 (You Only Look Once) object detection model
      2. AWS EC2 (for GPU acceleration)
      3. Docker containerization
 
-3. **Environment Variables**: Create `.env` file with:
-           # MODEL_PATH=models/best.pt
-           # CONFIDENCE_THRESHOLD=0.25
+3. ## ⚙️ Environment Configuration
+
+Create a `.env` file in your project root with the following variables:
+
+```ini
+# Required Variables
+MODEL_PATH=models/best.pt               # Path to trained YOLO model
+CONFIDENCE_THRESHOLD=0.25              # Default detection threshold (0.1-0.9)
+
+# Optional Variables (for advanced deployment)
+GRADIO_SERVER_PORT=7860                # Web interface port
+DEVICE=cuda:0                          # Inference device (cpu/cuda:0/mps)
+AUGMENT=True                           # Enable/disable test-time augmentation
+
+```
 
 4. **Testing**: 
 - Test cases available in `/tests`
