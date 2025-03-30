@@ -94,8 +94,8 @@ This system uses a fine-tuned YOLOv8 (You Only Look Once) object detection model
      3. Docker containerization
 
 3. **Environment Variables**: Create `.env` file with:
-           MODEL_PATH=models/best.pt
-           CONFIDENCE_THRESHOLD=0.25
+           # MODEL_PATH=models/best.pt
+           # CONFIDENCE_THRESHOLD=0.25
 
 4. **Testing**: 
 - Test cases available in `/tests`
